@@ -1,0 +1,181 @@
+@import "properties.scss";
+
+.task {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid $white;
+  border-radius: 0.25rem;
+
+  &.collapsedTask {
+    .moveTask {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      padding: 0.3rem 0.5rem;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 0 0.25rem;
+
+    .input {
+      background-color: transparent;
+      border: 1px solid transparent;
+      border-radius: 0.25rem;
+      color: $white;
+      text-align: center;
+      resize: none;
+      display: flex;
+      font-family: "Kanit", sans-serif;
+
+      &:hover {
+        cursor: pointer;
+        border: 1px solid $white;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $gold;
+        color: $gold;
+      }
+
+      &::placeholder {
+        color: $white;
+      }
+    }
+
+    .title {
+      margin-bottom: 0.5rem;
+      padding: 0.5rem 0;
+      width: 100%;
+      font-size: 1.1rem;
+
+      &:hover {
+        cursor: text;
+      }
+    }
+
+    .description {
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      width: 100%;
+      font-size: 1.1rem;
+
+      &:hover {
+        cursor: text;
+      }
+    }
+
+    .urgencyLabels {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: row;
+
+      label {
+        color: $blue;
+        padding: 0.05rem 0.5rem;
+        margin: 0 0.25rem;
+        text-transform: uppercase;
+        border-radius: 0.25rem;
+
+        .icon {
+          font-size: 1.25rem;
+          margin-right: 0.25rem;
+          transition: all 0.4s ease-in-out;
+
+          &.hide {
+            display: none;
+          }
+
+          &.show {
+            display: inline-block;
+          }
+        }
+
+        input {
+          display: none;
+        }
+
+        &.low {
+          background-color: $green;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $highlight;
+            border-color: $highlight;
+          }
+        }
+
+        &.medium {
+          background-color: $yellow;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $highlight;
+            border-color: $highlight;
+          }
+        }
+
+        &.high {
+          background-color: $pink;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $highlight;
+            border-color: $highlight;
+          }
+        }
+
+        &.selected {
+          font-weight: 700;
+        }
+      }
+    }
+
+    &.collapsed {
+      flex-direction: row;
+      align-content: center;
+
+      .title {
+        margin: 0;
+
+        &:hover {
+          border-color: transparent;
+          cursor: default;
+        }
+      }
+
+      .urgencyLabels {
+        margin-bottom: 0;
+        margin-right: 1rem;
+      }
+
+      .description,
+      label {
+        display: none;
+      }
+
+      label.selected {
+        display: inline-block;
+        font-weight: 500;
+      }
+
+      .button {
+        padding: 0.025rem 0.5rem;
+
+        &.moveTask {
+          background-color: red;
+        }
+      }
+
+      &:hover .button {
+        display: inline-block;
+      }
+    }
+  }
+}

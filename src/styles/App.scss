@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "properties.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Kanit", sans-serif;
+  background-color: $blue;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  margin: 2rem 0;
+  font-weight: 400;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $green;
+  align-items: center;
+  width: fit-content;
+}
+
+section {
+  display: flex;
+  width: 70rem;
+  margin-bottom: 2rem;
+}
+
+.button {
+  border: 1px solid $gold;
+  text-transform: uppercase;
+  width: fit-content;
+  padding: 0.3rem 1.5rem;
+  background-color: $green;
+  border-color: $green;
+  color: $blue;
+  font-weight: 500;
+  font-family: "Kanit", sans-serif;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  margin-right: 0.25rem;
+
+  &:hover {
+    background-color: $highlight;
+    border-color: $highlight;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $highlight;
+    background-color: $highlight;
+    color: $white;
+  }
+
+  &.addTask {
+    font-size: 3rem;
+    padding: 0 0 0.4rem 0;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 1rem;
+    margin-top: 2rem;
+  }
+
+  &.moveTask {
+    font-size: 1.5rem;
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 0;
+    line-height: 1rem;
+  }
+
+  &.delete {
+    background-color: $pink;
+    border-color: $pink;
+
+    &:hover {
+      background-color: $red;
+      border-color: $red;
+    }
+  }
+}
+
+@media only screen and (max-width: 75rem) {
+  section {
+    width: 100%;
+    flex-direction: column;
+  }
+}
